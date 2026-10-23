@@ -2225,8 +2225,7 @@ void app_main_msx(uint8_t load_state, uint8_t start_paused, int8_t save_slot)
          * other LCD buffer on screen (stale / partial modes 10–12) → flicker. */
         if (drawFrame) {
             msx_blit_frame();
-            if (common_emu_state.overlay != INGAME_OVERLAY_NONE)
-                common_ingame_overlay();
+            common_ingame_overlay();
             draw_disk_icon();
             lcd_swap();
         }
